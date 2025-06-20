@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffd6e0, #ffeef4);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+.mensaje {
+  color: #d10068;
+  font-size: 1.5em;
+  z-index: 2;
+}
+
+.mensaje h1 {
+  font-size: 3em;
+  margin: 0.2em 0;
+}
+
+.tortugas {
+  margin: 1em 0;
+  z-index: 2;
+}
+
+.tortugas img {
+  width: 200px;
+  max-width: 80vw;
+  height: auto;
+}
+
+/* Animación de corazones */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: floatDown linear infinite;
+  z-index: 1;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -10px;
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(-100px) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
